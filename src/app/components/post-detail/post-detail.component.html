@@ -1,0 +1,42 @@
+<button mat-button color="primary" (click)="goBack()">← Back to Posts</button>
+<mat-card class="post-detail-card">
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle>{{post.authorName}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>{{ post.content }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+    <!-- <button mat-button (click)="onLike()">Like ({{ post.likes }})</button> -->
+    <button mat-button (click)="onLike(post)">
+        {{ post.likedBy && currentUser && post.likedBy.includes(currentUser.id) ? 'Unlike' : 'Like' }} ({{ post.likes }})
+    </button>
+
+    <ng-container *ngIf="currentUser && post.authorId === currentUser.id">
+        <button mat-button color="accent" (click)="onEditPost()">Edit</button>
+        <button mat-button color="warn" (click)="onDeletePost()">Delete</button>
+    </ng-container>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class="comments-card">
+    <mat-card-title>Comments</mat-card-title>
+    <mat-card-content>
+    <div *ngIf="post.comments && post.comments.length; else noComments">
+        <div *ngFor="let comment of post.comments" class="comment">
+        <p>{{ comment.content }}</p>
+        <small>{{ comment.createdAt | date:'short' }}</small>
+        </div>
+    </div>
+    <ng-template #noComments>
+        <p>No comments yet.</p>
+    </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Add a comment</mat-label>
+        <input matInput [(ngModel)]="newCommentText" name="newComment">
+    </mat-form-field>
+    <button mat-button color="primary" (click)="onAddComment()">Submit</button>
+    </mat-card-actions>
+</mat-card>

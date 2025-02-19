@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Left Section: Title/Logo -->
+  <span class="left-items">My Blog</span>
+
+  <!-- Center Section: User Info (only shown when logged in) -->
+  <span class="center-items" *ngIf="currentUser">
+    Hello, {{ currentUser.name ? currentUser.name : currentUser.email }}
+  </span>
+
+  <!-- Right Section: Navigation Buttons -->
+  <span class="right-items">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/create" *ngIf="currentUser">Create Post</button>
+    <ng-container *ngIf="currentUser; else guestLinks">
+      <button mat-button (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #guestLinks>
+      <button mat-button routerLink="/login">Login</button>
+      <button mat-button routerLink="/register">Register</button>
+    </ng-template>
+  </span>
+</mat-toolbar>

@@ -1,0 +1,30 @@
+.post-detail-card {
+    margin: 16px;
+}
+
+.comments-card {
+    margin: 16px;
+}
+
+.comment {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 4px 0;
+}
+
+.full-width {
+    width: 100%;
+}
+button[mat-button] {
+    margin: 8px;
+}
+mat-card-content{
+    padding: 10px;
+    margin-top: 20px;
+}
+mat-card-content p{
+    white-space: pre-line;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+

@@ -1,0 +1,14 @@
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px;
+}
+
+.post-card {
+    cursor: pointer;
+}
+
+mat-paginator {
+    margin: 16px;
+}

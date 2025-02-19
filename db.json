@@ -1,39 +1,95 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@example.com"
+      "email": "test@email.com",
+      "password": "$2a$10$yrZ8ZwkSNZWpbmZu31hH6OGECHnqK7B9Tdxd/5wDZq2gxZ5Q7FND.",
+      "id": 1
     },
     {
-      "id": "2",
-      "name": "Jane Smith",
-      "email": "jane@example.com"
+      "email": "admin@gmail.com",
+      "password": "$2a$10$ezzQg0LHR0dX6bUypm0udeVJLARQ57xc4tD5/vgj9i9Cqoz0v9XES",
+      "id": 2
     },
     {
-      "id": 0,
-      "name": "Barry",
-      "email": "Alan"
+      "email": "thethtoozaw@gmail.com",
+      "password": "$2a$10$C9rAD4nkV0Xsh3FtsvGL6e18hN2OVYIdXMBv2Fvl/QDIlhMs2fP4m",
+      "name": "Thet Htoo Zaw",
+      "id": 3
     },
     {
-      "id": 0,
-      "name": "Alan Jane",
-      "email": "alanjane@email.com"
+      "email": "aungkokonaing118@gmail.com",
+      "password": "$2a$10$HIHDSddX1vJnHIsby.g5WuT3aggLVrYVa29rpLZNZ6LYgIrw9p5ie",
+      "name": "aung ko ko naing",
+      "id": 4
     },
     {
-      "id": 0,
-      "name": "Test",
-      "email": "test@gmail.com"
+      "email": "tharzaw@gmail.com",
+      "password": "$2a$10$9/MQSDf6llKE2RgMxe4yFeVb8MoUe6UOqol6XvPAX2NmxpLu9OOKC",
+      "name": "Thar Zaw",
+      "dob": "2003-03-27T17:30:00.000Z",
+      "id": 5
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to My Blog",
+      "content": "This is the first post.",
+      "authorId": 1,
+      "createdAt": "2024-01-01T12:00:00Z",
+      "likes": 3,
+      "comments": [
+        {
+          "content": "Nice One",
+          "authorId": "3",
+          "createdAt": "2025-02-09T05:36:33.869Z"
+        },
+        {
+          "content": "Nice Two",
+          "authorId": 3,
+          "createdAt": "2025-02-11T08:31:54.203Z"
+        }
+      ],
+      "authorName": "Unknown author",
+      "likedBy": [
+        3,
+        4,
+        "3"
+      ]
     },
     {
-      "id": 0.8639414890350543,
-      "name": "admin",
-      "email": "admin@gmail.com"
+      "title": "About Angular Pipe",
+      "content": "In Type Script\n==============\nimport { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({ name: 'uppercase' }) // Name of the pipe\nexport class UppercasePipe implements PipeTransform {\n  transform(value: string): string {\n    return value.toUpperCase(); // Transformation logic\n  }\n}\n\n===============\n\nIn Html\n========\n<p>{{ name | uppercase }}</p>  ```\n\nIn this example, the `uppercase` pipe transforms the value of the `name` variable to uppercase before displaying it.\n\n**Common Built-in Pipes:**\n\nAngular provides several built-in pipes:\n\n* `uppercase`: Converts text to uppercase.\n* `lowercase`: Converts text to lowercase.\n* `titlecase`: Converts text to title case.\n* `number`: Formats numbers.\n* `currency`: Formats currency values.\n* `date`: Formats dates.\n* `json`: Converts an object to its JSON string representation.\n* `slice`: Extracts a section of an array or string.\n\n**Creating Custom Pipes:**\n\nYou can create your own custom pipes to implement specific transformations.  The example above shows how to create a simple `uppercase` pipe.  You need to implement the `PipeTransform` interface and define the `transform()` method.\n\n**Benefits of Using Pipes:**\n\n* **Code Reusability:** Pipes can be reused throughout your application.\n* **Clean Templates:** Pipes keep your templates clean and readable by moving transformation logic to the pipe class.\n* **Testability:** Pipes are easy to test.\n\n**If you can provide more context about \"Pipz,\" I might be able to offer more specific information.**  Otherwise, it's likely you're thinking of \"pipes\" in Angular, which are a core feature for data transformation in templates.",
+      "authorId": "3",
+      "authorName": "Thet Htoo Zaw",
+      "id": 2,
+      "likes": 0,
+      "comments": [],
+      "likedBy": []
     },
     {
-      "id": 30,
-      "name": "123",
-      "email": "123@gmail.com"
+      "title": "First Day of February (Hey)",
+      "content": "Happy February! 🥳 Welcome to a fresh month, full of new opportunities, experiences, and memories to create! Here are some ideas to kick off the month on the right note:\nEmbrace the Winter Vibes ❄️ Even if you're not a fan of the cold, February offers a chance to enjoy cozy vibes. Grab your warmest blanket, a cup of hot chocolate, and dive into a good book or binge-watch your favorite series.",
+      "authorId": 4,
+      "authorName": "aung ko ko naing",
+      "id": 7,
+      "likes": 1,
+      "comments": [],
+      "likedBy": [
+        "3"
+      ]
+    },
+    {
+      "title": "Why did Thet Mon reject 12 times to me!!!!!",
+      "content": "In fact, there might not be any reason to love someone or not to love. It just come to your life when the times has come right. So, there is no right to blame each other for rejecting and being rejected. Life is living. Don't think to much. Just do ittttttttttttttt.",
+      "authorId": 5,
+      "authorName": "Thar Zaw",
+      "id": 8,
+      "likes": 1,
+      "comments": [],
+      "likedBy": [
+        5
+      ]
     }
   ]
 }
