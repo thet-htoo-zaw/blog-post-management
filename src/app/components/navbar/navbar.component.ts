@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
 
   currentUser: User | null = null;
 
+  isDarkTheme: boolean = false;
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -24,6 +26,17 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  toggleTheme():void{
+    this.isDarkTheme =!this.isDarkTheme;
+    const body = document.body;
+
+    if(this.isDarkTheme){
+      body.classList.add('dark-theme');
+    } else{
+      body.classList.remove('dark-theme');
+    }
   }
 
 }
