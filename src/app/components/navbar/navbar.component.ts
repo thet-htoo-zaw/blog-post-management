@@ -19,9 +19,20 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
+
     this.authService.user$.subscribe((user) =>{
       this.currentUser = user;
     });
+
+    const storedTheme = localStorage.getItem('isDarkTheme');
+
+    if(storedTheme && storedTheme === 'true'){
+      this.isDarkTheme = true;
+      document.body.classList.add('dark-theme');
+    } else{
+      this.isDarkTheme = false;
+      document.body.classList.remove('dark-theme');
+    }
   }
   logout(): void {
     this.authService.logout();
@@ -29,7 +40,7 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleTheme():void{
-    this.isDarkTheme =!this.isDarkTheme;
+    this.isDarkTheme = !this.isDarkTheme;
     const body = document.body;
 
     if(this.isDarkTheme){
@@ -37,6 +48,8 @@ export class NavbarComponent implements OnInit {
     } else{
       body.classList.remove('dark-theme');
     }
+
+    localStorage.setItem('isDarkTheme', String(this.isDarkTheme));
   }
 
 }

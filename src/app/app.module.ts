@@ -23,6 +23,9 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LimitWordsPipe } from './pipes/limit-words.pipe';
+import { DashboardSidebarComponent } from './components/dashboard-sidebar/dashboard-sidebar.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ThemeToggleDirective } from './directives/theme-toggle.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { LimitWordsPipe } from './pipes/limit-words.pipe';
     PostFormComponent,
     FooterComponent,
     LimitWordsPipe,
+    DashboardSidebarComponent,
+    ThemeToggleDirective,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { LimitWordsPipe } from './pipes/limit-words.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
+    FlexLayoutModule,
     // material module
     MatToolbarModule,
     MatCardModule,

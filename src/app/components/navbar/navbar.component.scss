@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 16px;
 }
 
 .left-items {
@@ -22,4 +23,27 @@
     text-align: right;
     display: flex;
     justify-content: flex-end;
+}
+
+/* Responsive adjustments for screens 600px or less */
+@media (max-width: 600px) {
+    .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    .left-items,
+    .right-items {
+    width: 100%;
+    text-align: center;
+    }
+
+    .center-items {
+    display: none; /* Hide center items on small screens */
+    }
+
+    .right-items {
+    margin-top: 8px;
+    justify-content: center;
+    }
 }

@@ -1,13 +1,13 @@
-<mat-toolbar color="primary" class="navbar">
-  <!-- Left Section: Title/Logo -->
+<mat-toolbar color="primary" class="navbar" fxLayout="row" fxLayoutAlign="space-between center">
+  <!-- Left Section -->
   <span class="left-items">My Blog</span>
 
-  <!-- Center Section: User Info (only shown when logged in) -->
+  <!-- Center Section -->
   <span class="center-items" *ngIf="currentUser">
     Hello, {{ currentUser.name ? currentUser.name : currentUser.email }}
   </span>
 
-  <!-- Right Section: Navigation Buttons -->
+  <!-- Right Section-->
   <span class="right-items">
     <button mat-button routerLink="/">Home</button>
     <button mat-button routerLink="/create" *ngIf="currentUser">Create Post</button>
@@ -19,7 +19,11 @@
       <button mat-button routerLink="/register">Register</button>
     </ng-template>
 
-    <button mat-button (click)="toggleTheme()">
+    <!-- <button mat-button (click)="toggleTheme()">
+      {{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}
+    </button> -->
+
+    <button mat-button appThemeToggle> 
       {{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}
     </button>
   </span>
